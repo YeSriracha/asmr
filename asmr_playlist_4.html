@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>asmr playlist</title>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body{margin: 0;}
+		img{display: block; width: 100%;}
+		body{width: 1280px; margin:auto;}
+		header{heigt: 600px; padding-top: 15px;}
+		h1{text-align: left; font-size: 3em; font-weight: 400; margin-left: 0; margin-top: 40px; margin-bottom: 0;}
+		html{font-family: 'Cormorant Garamond', serif;}
+		button{	display: inline-block;
+				background: none;
+				width:  150px;
+				height: 50px;
+				margin: 0;
+				border: 1px solid darkgrey;
+				font-size: 1.3em;
+				font-family:'Cormorant Garamond', serif;
+				font-weight: 500;
+				
+			}
+		/*button:hover{
+			box-shadow: 0px 0px 10px slategray ; transition: all 0.5s;
+		}*/
+		.container{display: flex; align-items: flex-end;}
+		div{width: 1280px; margin: 5px; margin-bottom: 0px;}
+		.slider{width: 260px; margin: auto;display: block;text-align: center;margin-bottom: 100px; float: right; margin-top: 0px;}
+		input[type=range]{-webkit-appearance: none;background: transparent;background: gray;height:2px; width: 180px;}
+		input[type=range]::-webkit-slider-thumb
+		{-webkit-appearance: none;border: none;height: 10px;width: 10px;background: black;border-radius: 50%;}
+		img:hover{
+			box-shadow: 0px 0px 10px slategray ; transition: all 0.4s;
+		}
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<input id="vol" type="range" max="100" min="0" class="slider">
+		<h1>+ Change your mood +</h1>
+	</header>
+	<section>
+		<div class="container">
+			<div>
+				<img id="forest"src="forest.jpg">
+				<audio id="forestSnd" src="forest.mp3"></audio>
+			</div>
+			<div>
+				<img id="beach"src="beach.jpg">
+				<audio id="beachSnd" src="beach.mp3"></audio>
+			</div>
+			<div>
+				<img id="rain"src="rain.jpg">
+				<audio id="rainSnd" src="rain.mp3"></audio>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+			vol.value = 100;
+			vol.oninput = function(){
+				forestSnd.volume = vol.value / 100;
+				beachSnd.volume = vol.value / 100;
+				rainSnd.volume = vol.value / 100;
+			}
+
+		var state = false;
+
+		forest.onclick = function(){
+			if(!state){
+				forestSnd.play();
+				state = true;
+			}else{
+				forestSnd.pause();
+				state = false;
+			}
+		} 
+			var state = false;
+
+		beach.onclick = function(){
+			if(!state){
+				beachSnd.play();
+				state = true;
+			}else{
+				beachSnd.pause();
+				state = false;
+			}
+		} 
+		var state = false;
+
+		rain.onclick = function(){
+			if(!state){
+				rainSnd.play();
+				state = true;
+			}else{
+				rainSnd.pause();
+				state = false;
+			}
+		} 
+
+	</script>
+
+</body>
+</html>
